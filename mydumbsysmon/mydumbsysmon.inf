@@ -1,0 +1,45 @@
+;
+; mydumbsysmon.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+DriverVer=01/01/2023,1.0.0.0
+CatalogFile=mydumbsysmon.cat
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+mydumbsysmon.sys = 1
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$.10.0...16299
+
+[Standard.NT$ARCH$.10.0...16299]
+%MyDeviceDesc%=mydumbsysmon_Install, Root\MyDumbSysmon
+
+[mydumbsysmon_Install]
+CopyFiles = @mydumbsysmon.sys
+
+[mydumbsysmon_Install.Services]
+AddService = %ServiceName%, 0x00000002, mydumbsysmon_service_inst
+
+[mydumbsysmon_service_inst]
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary = %13%\mydumbsysmon.sys
+
+[Strings]
+ManufacturerName="IRC"
+DiskName="My Dumb Sysmon Source Disk"
+ServiceName="mydumbsysmon"
+MyDeviceDesc="My Dumb Sysmon"

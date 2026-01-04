@@ -1,0 +1,13 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="DumbSysmonUserland/DumbSysmonUserland.vcxproj" Id="7ca99915-1480-4437-9cea-f0a8ca2d59f9">
+    <BuildDependency Project="mydumbsysmon/mydumbsysmon.vcxproj" />
+  </Project>
+  <Project Path="mydumbsysmon/mydumbsysmon.vcxproj">
+    <Deploy Solution="*|x64" />
+    <Deploy Solution="Release|ARM64" />
+  </Project>
+</Solution>
