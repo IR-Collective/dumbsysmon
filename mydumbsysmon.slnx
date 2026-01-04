@@ -3,6 +3,12 @@
     <Platform Name="ARM64" />
     <Platform Name="x64" />
   </Configurations>
+  <Folder Name="/commons/">
+    <File Path="shared.h" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
   <Project Path="DumbSysmonUserland/DumbSysmonUserland.vcxproj" Id="7ca99915-1480-4437-9cea-f0a8ca2d59f9">
     <BuildDependency Project="mydumbsysmon/mydumbsysmon.vcxproj" />
   </Project>
